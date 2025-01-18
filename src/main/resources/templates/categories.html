@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Liste des catégories</title>
+		<link rel="stylesheet" th:href="@{../webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+	</head>
+	<body>
+		<div class="container">
+		<ul class="nav">
+			<li class="nav-item"><a class="nav-link" href="/">Liste des produits</a></li>
+			<li class="nav-item"><a class="nav-link" href="/cat/">Liste des catégories</a></li>
+			<li class="nav-item"><a class="nav-link" href="/cat/ajout">Ajouter une catégorie</a></li>
+			<li class="nav-item"><a class="nav-link" href="/ajout">Ajouter un produit</a></li>
+			<li class="nav-item"><a class="nav-link" href="/consult">Consulter un produit</a></li>
+			<li class="nav-item"><a class="nav-link" href="">un autre lien</a></li>
+		</ul>
+		<h1 class="h1">Liste des catégories</h1>
+		<table class="table">
+			<thead class="thead">
+				<tr>
+					<th>Code catégoire</th>
+					<th>Nom Catégorie</th>
+					<th>Consulter</th>
+					<th>Editer</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr th:each="c:${listeCats}">
+					<td th:text="${c.codeCategorie}"></td>
+					<td th:text="${c.nomCategorie}"></td>
+					<td><a th:href="'/cat/consult?codeCategorie=' + ${c.codeCategorie}">consulter</a></td>
+					<td><a th:href="'/cat/edit?codeCategorie=' + ${c.codeCategorie}">éditer</a></td>
+					<td><a th:href="'/cat/delete?codeCategorie=' + ${c.codeCategorie}">supprimer</a></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>ajouter une catégorie</title>
+		<link rel="stylesheet" th:href="@{../webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+	</head>
+	<body>
+		<div class="container">
+			<ul class="nav">
+							<li class="nav-item"><a class="nav-link" href="/">Liste des produits</a></li>
+							<li class="nav-item"><a class="nav-link" href="/com/">Liste des commandes</a></li>
+							<li class="nav-item"><a class="nav-link" href="/com/ajout">Ajouter une commande</a></li>
+
+							<li class="nav-item"><a class="nav-link" href="/cat/">Liste des catégories</a></li>
+							<li class="nav-item"><a class="nav-link" href="/cat/ajout">Ajouter une catégorie</a></li>
+							<li class="nav-item"><a class="nav-link" href="/ajout">Ajouter un produit</a></li>
+							<li class="nav-item"><a class="nav-link" href="/consult">Consulter un produit</a></li>
+							<li class="nav-item"><a class="nav-link" href="">un autre lien</a></li>
+						</ul>
+			<h1 class="h1">Ajouter une nouvelle catégorie</h1>
+		<form action="/cat/save" method="post" th:object="${newCategorie}">
+			Nom catégorie : <input type="text" name="nomCategorie" class="form-control" th:field="*{nomCategorie}" />
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		</div>
+	</body>
+	
+</html>

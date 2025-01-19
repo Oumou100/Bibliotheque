@@ -18,7 +18,7 @@ import com.repositories.LivreRepository;
 @Controller
 public class CategorieController {
 	
-	@Autowired
+	/*@Autowired
 	private CategorieRepository catRepo;
 	
 	@Autowired
@@ -67,7 +67,7 @@ public class CategorieController {
 	public String modifierCategorie(@RequestParam long codeCategorie,@RequestParam String nomCategorie,@RequestParam String description) {
 		catRepo.mettreAjourCategorie(codeCategorie,nomCategorie,description);
 		return "redirect:/cat/";
-	}
+	}*/
 	
 	/*@GetMapping("/cat/delete")
 	public String supprimerCategorie(@RequestParam long codeCategorie) {

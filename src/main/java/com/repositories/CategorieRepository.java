@@ -11,8 +11,9 @@ import jakarta.transaction.Transactional;
 
 public interface CategorieRepository extends JpaRepository<Categorie,Long>{
 	
-	@Transactional
+/*	@Transactional
 	@Modifying
 	@Query("update Categorie c set c.nomCategorie=:nomCategorie set c.description=:description where c.codeCategorie=:codeCategorie")
 	public void mettreAjourCategorie(@Param("codeCategorie") long codeCategorie,@Param("nomCategorie") String nomCategorie,@Param("description") String description);
+*/
 }

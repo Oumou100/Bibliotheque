@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>consulter produit</title>
+		<link rel="stylesheet" th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+	</head>
+	<body>
+		<div class="container">
+			<ul class="nav">
+										           <li class="nav-item"><a class="nav-link" href="/">Liste des livres</a></li>
+										           <li class="nav-item"><a class="nav-link" href="/abon/ajout">Ajouter un nouvel abonné</a></li>
+										           <li class="nav-item"><a class="nav-link" href="/emp/ajout">Ajouter un nouvel emprunt </a></li>
+										           <li class="nav-item"><a class="nav-link" href="/emp/">Liste des emprunts</a></li>
+										           <li class="nav-item"><a class="nav-link" href="/emp/det">Détails emprunt</a></li>
+										           <li class="nav-item"><a class="nav-link" href="">Un autre lien</a></li>
+										       </ul>
+
+		<h1 class="h1">Abonne</h1>
+		<table class="table">
+			<thead class="thead">
+				<tr>
+					<th>Nom abonné</th>
+					<th>Prenom abonné</th>
+					<th>Email abonné</th>
+					<th>Telephone abonné</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td th:text="${a.nom}"></td>
+					<td th:text="${a.prenom}"></td>
+					<td th:text="${a.email}"></td>
+					<td th:text="${a.tel}"></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</body>
+</html>

@@ -2,6 +2,8 @@ package com.entities;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -12,6 +14,7 @@ public class Emprunt {
 @EmbeddedId
 private DetailsCle id;
 private int duree;
+@DateTimeFormat(pattern = "yyyy-MM-dd")
 private Date dateDebut;
 
 @ManyToOne

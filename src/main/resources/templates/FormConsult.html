@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<title>ajouter une catégorie</title>
-		<link rel="stylesheet" th:href="@{../webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+		<title>Consulter un produit</title>
+		<link rel="stylesheet" th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
 	</head>
 	<body>
 		<div class="container">
@@ -13,10 +13,12 @@
 													           <li class="nav-item"><a class="nav-link" href="/emp/det">Détails emprunt</a></li>
 													           <li class="nav-item"><a class="nav-link" href="">Un autre lien</a></li>
 													       </ul>
-			<h1 class="h1">Ajouter une nouvelle catégorie</h1>
-		<form action="/cat/save" method="post" th:object="${newCategorie}">
-			Nom catégorie : <input type="text" name="nomCategorie" class="form-control" th:field="*{nomCategorie}" />
-			<input type="submit" value="Save" class="btn btn-primary" />
+			<h1 class="h1">Sélectionner l'abonné</h1>
+		<form action="/consulterAbonne" method="post">
+			<select name="codeAbonne">
+				<option th:each="a:${abonnes}" th:text="${a.nom}" th:value="${a.noAbonne}" ></option>
+			</select>
+			<input type="submit" value="consulter" class="btn btn-primary" />
 		</form>
 		</div>
 	</body>

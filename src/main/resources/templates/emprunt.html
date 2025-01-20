@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Détails Commande</title>
+    <link rel="stylesheet" th:href="@{../webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container">
+		<ul class="nav">
+												           <li class="nav-item"><a class="nav-link" href="/">Liste des livres</a></li>
+												           <li class="nav-item"><a class="nav-link" href="/abon/ajout">Ajouter un nouvel abonné</a></li>
+												           <li class="nav-item"><a class="nav-link" href="/emp/ajout">Ajouter un nouvel emprunt </a></li>
+												           <li class="nav-item"><a class="nav-link" href="/emp/">Liste des emprunts</a></li>
+												           <li class="nav-item"><a class="nav-link" href="/emp/det">Détails emprunt</a></li>
+												           <li class="nav-item"><a class="nav-link" href="">Un autre lien</a></li>
+												       </ul>
+
+        
+        <table class="table">
+            <thead class="thead">
+                <tr>
+                    <th>Date de l'emprunt</th>
+                    <th>Durée de l'emprunt</th>
+                    <th>Abonné</th>
+                    <th>Livre</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emprunt : ${emprunts}">
+                    <td th:text="${emprunt.dateDebut}"></td>
+                    <td th:text="${emprunt.duree}"></td>
+                    <td th:text="${emprunt.abonne.nom}"></td>
+                    <td th:text="${emprunt.livre.titre}"></td>
+                    <td>Edit</td>
+					<td>Supprimer</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

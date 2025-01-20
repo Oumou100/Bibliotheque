@@ -13,9 +13,23 @@
 													           <li class="nav-item"><a class="nav-link" href="/emp/det">Détails emprunt</a></li>
 													           <li class="nav-item"><a class="nav-link" href="">Un autre lien</a></li>
 													       </ul>
-			<h1 class="h1">Ajouter une nouvelle catégorie</h1>
-		<form action="/cat/save" method="post" th:object="${newCategorie}">
-			Nom catégorie : <input type="text" name="nomCategorie" class="form-control" th:field="*{nomCategorie}" />
+			<h1 class="h1">Ajouter un emprunt</h1>
+		<form action="/abon/saveEmpruntLivre" method="post">
+			
+			 <input type="date" name="date" class="form-control"/>
+			 <input type="number" name="duree" class="form-control"/>
+			 Livre:
+			 			<select name="codeLivre" class="form-control" >
+			 				<option th:each="l:${livres}" th:text="${l.titre}" th:value="${l.idLivre}"></option>
+			 					
+			 				</option>
+			 			</select>
+			 			Abonne:
+			 						<select name="codeAbonne" class="form-control" >
+			 							<option th:each="a:${abonnes}" th:text="${a.nom}" th:value="${a.noAbonne}"></option>
+			 								
+			 							</option>
+			 						</select>	 
 			<input type="submit" value="Save" class="btn btn-primary" />
 		</form>
 		</div>
